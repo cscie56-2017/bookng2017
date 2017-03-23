@@ -1,0 +1,7 @@
+import cscie56.demo.Author
+
+model {
+	Author author
+}
+
+json tmpl.author(author)

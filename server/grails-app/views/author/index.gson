@@ -1,0 +1,8 @@
+import cscie56.demo.Author
+
+model {
+	Iterable<Author> authorList
+}
+
+json tmpl.author(authorList ?: [])
+

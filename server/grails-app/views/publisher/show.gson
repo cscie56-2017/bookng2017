@@ -1,0 +1,7 @@
+import cscie56.demo.Publisher
+
+model {
+	Publisher publisher
+}
+
+json tmpl.publisher(publisher)
