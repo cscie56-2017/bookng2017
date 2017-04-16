@@ -1,0 +1,8 @@
+.property-list {
+    list-style: none;
+    list-style-type: none;
+}
+
+.property-label {
+    font-weight: bold;
+}

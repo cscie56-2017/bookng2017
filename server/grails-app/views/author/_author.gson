@@ -1,7 +1,0 @@
-import cscie56.demo.Author
-
-model {
-	Author author
-}
-
-json g.render(author)

@@ -1,0 +1,49 @@
+
+<ol class="property-list book">
+
+    <li class="fieldcontain">
+        <span id="firstName-label" class="property-label">First Name</span>
+        <div class="property-value" aria-labelledby="firstName-label" id="author-firstName">{{author.firstName}}</div>
+    </li>
+
+    <li *ngIf="author.middleName" class="fieldcontain">
+        <span id="middleName-label" class="property-label">Middle Name</span>
+        <div class="property-value" aria-labelledby="middleName-label" id="author-middleName">{{author.middleName}}</div>
+    </li>
+
+
+    <li class="fieldcontain">
+        <span id="lastName-label" class="property-label">Last Name</span>
+        <div class="property-value" aria-labelledby="lastName-label" id="author-lastName">{{author.lastName}}</div>
+    </li>
+
+
+
+    <li class="fieldcontain">
+        <span id="birthDate-label" class="property-label">DOB</span>
+        <div class="property-value" aria-labelledby="birthDate-label" id="author-birthDate">
+            {{author?.birthDate | date: 'MM/dd/yyyy'}}
+        </div>
+    </li>
+
+
+    <li class="fieldcontain">
+        <span *ngIf="author.books" id="books-label" class="property-label">Book{{author.books.length==1?'':'s'}}</span>
+        <div class="property-value" aria-labelledby="books-label" id="book-authors">
+            <ul style="list-style-type: none;">
+                <li *ngFor="let book of author.books"><a href="/#/book-details/{{book.id}}">{{book.title}} ({{book.dateOfPublication | date: 'yyyy'}})</a> </li>
+            </ul>
+        </div>
+    </li>
+
+
+    <li class="fieldcontain">
+        <span *ngIf="author.publishers" id="publishers-label" class="property-label">Publisher{{author.publishers.length==1?'':'s'}}</span>
+        <div class="property-value" aria-labelledby="publishers-label" id="book-publishers">
+            <ul style="list-style-type: none;">
+                <li *ngFor="let publisher of author.publishers"><a href="/#/publisher-details/{{publisher.id}}">{{publisher.name}}</a> </li>
+            </ul>
+        </div>
+    </li>
+
+</ol>

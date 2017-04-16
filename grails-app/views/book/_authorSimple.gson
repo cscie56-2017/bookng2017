@@ -1,0 +1,10 @@
+import cscie56.demo.Author
+
+model {
+    Author author
+}
+
+json {
+    fullName author?.fullName
+    id author?.id
+}

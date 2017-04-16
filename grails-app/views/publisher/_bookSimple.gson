@@ -1,0 +1,11 @@
+import cscie56.demo.Book
+
+model {
+    Book book
+}
+
+json {
+    id book?.id
+    title book?.title
+    dateOfPublication book?.dateOfPublication
+}

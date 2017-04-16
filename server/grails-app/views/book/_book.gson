@@ -1,7 +1,0 @@
-import cscie56.demo.Book
-
-model {
-	Book book
-}
-
-json g.render(book)

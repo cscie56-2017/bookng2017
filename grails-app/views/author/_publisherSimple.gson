@@ -1,0 +1,10 @@
+import cscie56.demo.Publisher
+
+model {
+    Publisher publisher
+}
+
+json {
+    id publisher?.id
+    name publisher?.name
+}
