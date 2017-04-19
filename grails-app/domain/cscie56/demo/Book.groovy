@@ -1,5 +1,6 @@
 package cscie56.demo
 
+import grails.databinding.BindingFormat
 import grails.rest.*
 import java.text.DecimalFormat
 
@@ -7,6 +8,7 @@ import java.text.DecimalFormat
 class Book {
 
     String title
+    @BindingFormat('yyyy-MM-dd')
     Date dateOfPublication
     String isbn
     Integer price //stored as an integer, to make the math easier; will need to be formatted properly

@@ -10,10 +10,9 @@ json {
     price           book?.price
     priceFormatted  book?.priceFormatted
     authors         g.render(template: "authorSimple", collection: book?.authors ?: [], var: "author" )
-    publisher       book?.publisher?.name
-    publisherId     book?.publisher?.id
+    publisher       g.render(template:"/author/publisherSimple", model:[publisher:book.publisher])
     isbn            book?.isbn
-    dateOfPublication book?.dateOfPublication.format('M/d/yyyy')
+    dateOfPublication book?.dateOfPublication.format('yyyy-MM-dd')
     genre           book?.genre
     description     book?.description
 }

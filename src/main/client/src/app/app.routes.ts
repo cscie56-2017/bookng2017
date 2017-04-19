@@ -12,10 +12,13 @@ export const rootRouterConfig: Routes = [
     {path: 'applications', redirectTo: 'index'},
     {path: 'index', component: IndexComponent},
     {path: 'authors', component: AuthorsComponent},
+    {path: 'new-author', component: AuthorDetailsComponent},
     {path: 'author-details/:id', component: AuthorDetailsComponent},
     {path: 'books', component: BooksComponent},
+    {path: 'new-book', component: BookDetailsComponent},
     {path: 'book-details/:id', component: BookDetailsComponent},
     {path: 'publishers', component: PublishersComponent},
+    {path: 'new-publisher', component: PublisherDetailsComponent},
     {path: 'publisher-details/:id', component: PublisherDetailsComponent}
 
 ];

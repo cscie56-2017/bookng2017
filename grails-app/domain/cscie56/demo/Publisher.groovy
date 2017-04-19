@@ -1,11 +1,13 @@
 package cscie56.demo
 
+import grails.databinding.BindingFormat
 import grails.rest.Resource
 
 @Resource(formats=['json', 'xml'])
 class Publisher {
 
     String name
+    @BindingFormat('yyyy-MM-dd')
     Date dateEstablished
     String type
 

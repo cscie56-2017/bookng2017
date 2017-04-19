@@ -99,7 +99,7 @@ export class BooksComponent implements OnInit {
     <li class="fieldcontain">
         <span id="publisher-label" class="property-label">Publisher</span>
         <div class="property-value" aria-labelledby="publisher-label" id="book-publisher">
-            <a href="/#/publisher-details/${this.selectedBook.publisherId}">${this.selectedBook.publisher}</a>
+            <a href="/#/publisher-details/${this.selectedBook.publisher.id}">${this.selectedBook.publisher.name}</a>
         </div>
     </li>
 

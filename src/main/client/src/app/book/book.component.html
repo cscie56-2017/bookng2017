@@ -1,46 +1,69 @@
 
 <ol class="property-list book">
     <li class="fieldcontain">
-        <span *ngIf="selectedBook.authors" id="authors-label" class="property-label">Author{{selectedBook.authors.length==1?'':'s'}}</span>
+        <span id="title-label" class="property-label">Title</span>
+        <div class="property-value" aria-labelledby="title-label" id="book-title"><input [(ngModel)]="selectedBook.title" /></div>
+    </li>
+    <li class="fieldcontain">
+        <span id="authors-label" class="property-label">Author{{selectedBook?.authors?.length==1?'':'s'}}</span>
         <div class="property-value" aria-labelledby="authors-label" id="book-authors">
             <ul style="list-style-type: none;">
-                <li *ngFor="let author of selectedBook.authors"><a href="/#/author-details/{{author.id}}">{{author.fullName}}</a> </li>
+                <select multiple (change)="srcValueChange($event)">
+                    <option *ngFor="let author of authors"
+                            [value]="author.id">
+                        {{author?.fullName}}
+                    </option>
+                </select>
             </ul>
         </div>
     </li>
 
     <li class="fieldcontain">
         <span id="description-label" class="property-label">Description</span>
-        <div class="property-value" aria-labelledby="description-label" id="book-description">{{selectedBook.description}}</div>
+        <div class="property-value" aria-labelledby="description-label" id="book-description"><textarea [(ngModel)]="selectedBook.description" ></textarea></div>
     </li>
 
     <li class="fieldcontain">
         <span id="dateOfPublication-label" class="property-label">Date Of Publication</span>
         <div class="property-value" aria-labelledby="dateOfPublication-label" id="book-dateOfPublication">
-            {{selectedBook?.dateOfPublication | date: 'yyyy'}}
+            <input type="date" [(ngModel)]="selectedBook.dateOfPublication" />
         </div>
     </li>
 
     <li class="fieldcontain">
         <span id="price-label" class="property-label">Price</span>
-        <div class="property-value" aria-labelledby="price-label" id="book-price">{{selectedBook.priceFormatted}}</div>
+        <div class="property-value" aria-labelledby="price-label" id="book-price"><input [(ngModel)]="selectedBook.price" /></div>
     </li>
 
     <li class="fieldcontain">
         <span id="genre-label" class="property-label">Genre</span>
-        <div class="property-value" aria-labelledby="genre-label" id="book-genre">{{selectedBook.genre}}</div>
+        <div class="property-value" aria-labelledby="genre-label" id="book-genre">
+            <select [(ngModel)]="selectedBook.genre">
+                <option *ngFor="let genre of genres"
+                        [ngValue]="genre">
+                    {{genre}}
+                </option>
+            </select>
+        </div>
     </li>
 
-    <li class="fieldcontain">
+    <li  class="fieldcontain">
         <span id="publisher-label" class="property-label">Publisher</span>
         <div class="property-value" aria-labelledby="publisher-label" id="book-publisher">
-            <a href="/#/publisher-details/{{selectedBook.publisherId}}">{{selectedBook.publisher}}</a>
+            <select [(ngModel)]="selectedBook.publisher">
+                <option *ngFor="let publisher of publishers"
+                        [ngValue]="publisher">
+                    {{publisher?.name}}
+                </option>
+            </select>
         </div>
     </li>
 
     <li class="fieldcontain">
         <span id="isbn-label" class="property-label">Isbn</span>
-        <div class="property-value" aria-labelledby="isbn-label" id="book-isbn">{{selectedBook.isbn}}</div>
+        <div class="property-value" aria-labelledby="isbn-label" id="book-isbn"><input [(ngModel)]="selectedBook.isbn"/></div>
     </li>
 
 </ol>
+
+<button class="btn btn-outline-primary"(click)="updateBook(selectedBook)">Update</button>

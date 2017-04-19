@@ -8,7 +8,7 @@ model {
 json {
     id publisher?.id
     name publisher?.name
-    dateEstablished publisher?.dateEstablished
+    dateEstablished publisher?.dateEstablished.format('yyyy-MM-dd')
     books g.render(template:'bookSimple', collection: publisher?.books ?: [], var:'book')
     authors g.render(template:'/book/authorSimple', collection: publisher?.authors ?: [], var:'author')
 }

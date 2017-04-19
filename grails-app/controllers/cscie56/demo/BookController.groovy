@@ -1,5 +1,6 @@
 package cscie56.demo
 
+import grails.converters.JSON
 import groovy.sql.Sql
 
 import static org.springframework.http.HttpStatus.*
@@ -28,6 +29,13 @@ class BookController {
             render status: NOT_FOUND
             return
         }
+
+        def authorIds = book.authors*.id
+        book?.authors?.clear()
+        authorIds?.each{
+            book.addToAuthors(Author.get(it))
+        }
+
 
         if (book.hasErrors()) {
             transactionStatus.setRollbackOnly()

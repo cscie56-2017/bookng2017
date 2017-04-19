@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "2.2.1",
     "@angular/router": "3.2.1",
     "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.11",
+    "angular2-flash-messages": "^1.0.8",
     "angular2-modal": "^2.0.3",
     "bootstrap": "4.0.0-alpha.5",
     "core-js": "^2.4.1",
@@ -36,7 +37,10 @@
   "devDependencies": {
     "@angular/compiler-cli": "2.2.1",
     "@types/jasmine": "2.5.38",
+    "@types/jquery": "^2.0.39",
     "@types/node": "^6.0.42",
+    "@types/underscore": "^1.7.33",
+    "angular-2-dropdown-multiselect": "^1.0.8",
     "angular-cli": "1.0.0-beta.21",
     "codelyzer": "~1.0.0-beta.3",
     "jasmine-core": "2.5.2",
@@ -50,8 +54,6 @@
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
-    "@types/jquery": "^2.0.39",
-    "@types/underscore": "^1.7.33",
     "webdriver-manager": "10.2.5"
   }
 }

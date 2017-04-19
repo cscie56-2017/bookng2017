@@ -7,4 +7,5 @@ model {
 json {
     id publisher?.id
     name publisher?.name
+    dateEstablished publisher?.dateEstablished
 }

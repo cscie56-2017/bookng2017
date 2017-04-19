@@ -20,6 +20,11 @@ export class BookService {
             .map(response => <Book[]>response.json());
     }
 
+    getGenres() {
+        return this.http.get(`${this.baseUrl}/genre`)
+            .map(response => <string[]>response.json());
+    }
+
     getBookDetail(id) {
         return this.http.get(`${this.baseUrl}/book/${id}`)
             .map(response => <Book>response.json())

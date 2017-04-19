@@ -11,7 +11,7 @@ json {
     middleName author?.middleName
     lastName author?.lastName
     fullName author?.fullName
-    birthDate author?.birthDate.format('M/d/yyyy')
+    birthDate author?.birthDate.format('yyyy-MM-dd')
     books  g.render(template: "bookSimple", collection: author?.books?.sort {it.dateOfPublication} ?: [], var: "book" )
     publishers g.render(template: "publisherSimple", collection: author?.publishers?: [], var: "publisher" )
 }

@@ -1,5 +1,6 @@
 package cscie56.demo
 
+import grails.databinding.BindingFormat
 import grails.rest.*
 
 @Resource(formats=['json', 'xml'])
@@ -8,6 +9,7 @@ class Author {
     String firstName
     String middleName
     String lastName
+    @BindingFormat('yyyy-MM-dd')
     Date birthDate
 
     static hasMany = [books:Book]

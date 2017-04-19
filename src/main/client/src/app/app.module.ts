@@ -20,6 +20,10 @@ import { Modal, BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import {PublisherDetailsComponent} from "./publisher/publisher.component";
 import {BookDetailsComponent} from "./book/book.component";
 import {AuthorDetailsComponent} from "./author/author.component";
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
+
 
 const MODAL_PROVIDERS = [
   Modal,
@@ -58,7 +62,10 @@ const PUBLISHER_COMPONENTS = [
     RouterModule.forRoot(rootRouterConfig),
     NgbModule.forRoot(),
     ModalModule,
+    FlashMessagesModule,
+    MultiselectDropdownModule,
     BootstrapModalModule
+
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},

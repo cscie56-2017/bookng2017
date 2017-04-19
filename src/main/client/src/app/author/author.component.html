@@ -3,18 +3,18 @@
 
     <li class="fieldcontain">
         <span id="firstName-label" class="property-label">First Name</span>
-        <div class="property-value" aria-labelledby="firstName-label" id="author-firstName">{{author.firstName}}</div>
+        <div class="property-value" aria-labelledby="firstName-label" id="author-firstName"><input [(ngModel)]="author.firstName"/></div>
     </li>
 
     <li *ngIf="author.middleName" class="fieldcontain">
         <span id="middleName-label" class="property-label">Middle Name</span>
-        <div class="property-value" aria-labelledby="middleName-label" id="author-middleName">{{author.middleName}}</div>
+        <div class="property-value" aria-labelledby="middleName-label" id="author-middleName"><input [(ngModel)]="author.middleName"/></div>
     </li>
 
 
     <li class="fieldcontain">
         <span id="lastName-label" class="property-label">Last Name</span>
-        <div class="property-value" aria-labelledby="lastName-label" id="author-lastName">{{author.lastName}}</div>
+        <div class="property-value" aria-labelledby="lastName-label" id="author-lastName"><input [(ngModel)]="author.lastName" /></div>
     </li>
 
 
@@ -22,7 +22,7 @@
     <li class="fieldcontain">
         <span id="birthDate-label" class="property-label">DOB</span>
         <div class="property-value" aria-labelledby="birthDate-label" id="author-birthDate">
-            {{author?.birthDate | date: 'MM/dd/yyyy'}}
+            <input type="date" [(ngModel)]="author.birthDate" />
         </div>
     </li>
 
@@ -47,3 +47,4 @@
     </li>
 
 </ol>
+<button class="btn btn-outline-primary" (click)="updateAuthor(author)">Update</button>

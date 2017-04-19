@@ -9,8 +9,7 @@ export class Book {
     isbn: string;
     price: number;  //stored as an integer, to make the math easier; will need to be formatted properly
     priceFormatted:string;
-    publisher: string;
-    publisherId: number;
+    publisher: Publisher;
     genre: string;
     description: string ='';
     dateCreated: Date;
