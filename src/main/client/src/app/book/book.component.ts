@@ -38,7 +38,10 @@ export class BookDetailsComponent implements OnInit{
                 this.id = +params['id']; // (+) converts string 'id' to a number
                 console.log('id = ' + this.id);
                 this.bookService.getBookDetail(this.id).subscribe(
-                    book => this.selectedBook = book,
+                    book => {
+                        this.selectedBook = book;
+                        this.selectedAuthorIds = book.authors.map(a => a.id);
+                    },
                     error => console.log('Error getting book: ' + error)
                 );
             } else {

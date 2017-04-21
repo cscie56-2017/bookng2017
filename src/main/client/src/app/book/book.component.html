@@ -10,7 +10,8 @@
             <ul style="list-style-type: none;">
                 <select multiple (change)="srcValueChange($event)">
                     <option *ngFor="let author of authors"
-                            [value]="author.id">
+                            [value]="author.id"
+                            [selected]="selectedAuthorIds.indexOf(author.id) > -1 ? true: null">
                         {{author?.fullName}}
                     </option>
                 </select>
@@ -40,7 +41,8 @@
         <div class="property-value" aria-labelledby="genre-label" id="book-genre">
             <select [(ngModel)]="selectedBook.genre">
                 <option *ngFor="let genre of genres"
-                        [ngValue]="genre">
+                        [ngValue]="genre"
+                        [selected]="selectedBook.genre == genre ? true : null">
                     {{genre}}
                 </option>
             </select>
@@ -52,7 +54,8 @@
         <div class="property-value" aria-labelledby="publisher-label" id="book-publisher">
             <select [(ngModel)]="selectedBook.publisher">
                 <option *ngFor="let publisher of publishers"
-                        [ngValue]="publisher">
+                        [ngValue]="publisher"
+                        [selected]="selectedBook?.publisher?.id == publisher?.id ? true : null">
                     {{publisher?.name}}
                 </option>
             </select>
