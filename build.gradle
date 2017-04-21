@@ -79,7 +79,7 @@ node {
 task buildClientDev(type: NpmTask, dependsOn: 'npmInstall') {
     group = 'build'
     description = 'Compile client side assets for development'
-    args = ['run', 'buildDev']
+    args = ['run', 'build']
 }
 
 task buildClient(type: NpmTask, dependsOn: 'npmInstall') {
